@@ -1,0 +1,25 @@
+# Copyright 2022 NXGN Management, LLC. All Rights Reserved.
+
+# Collection of build commands and related settings used by the CodeBuild.
+
+version: 0.2
+
+env:
+  shell: bash
+phases:
+  pre_build:
+    commands:
+      - echo "Pre build started"
+      - . ./infrastructure/build/maven_codeartifact_auth.sh
+      - echo "Finished pre_build"
+  build:
+    commands:
+      #- env
+      - echo "Build started"
+      - mvn deploy --no-transfer-progress
+      - echo "Finished build"
+  post_build:
+    commands:
+      - echo "Post build started"
+      # Add post build commands here
+      - echo "Finished post_build"

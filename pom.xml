@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2021-2022 NXGN Management, LLC. All Rights Reserved. -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>spring-common</artifactId>
+	<version>2.2.0</version>
+	<packaging>pom</packaging>
+
+	<name>spring-common</name>
+
+<!--	<repositories>-->
+<!--		<repository>-->
+<!--			<id>nextgen-pxp-mf-build&#45;&#45;pxp-mf</id>-->
+<!--			<name>nextgen-pxp-mf-build&#45;&#45;pxp-mf Repository Mirror</name>-->
+<!--			<url>https://nextgen-pxp-mf-build-997401518295.d.codeartifact.us-east-2.amazonaws.com/maven/pxp-mf/</url>-->
+<!--		</repository>-->
+<!--	</repositories>-->
+
+	<parent>
+		<groupId>com.crossasyst</groupId>
+		<artifactId>spring-parent</artifactId>
+		<version>3.0.0</version>
+	</parent>
+
+	<properties>
+		<springframework-data-commons.version>2.6.1</springframework-data-commons.version>
+	</properties>
+
+	<modules>
+		<module>spring-common-utils</module>
+		<module>spring-common-web</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring-boot-release.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>${commons-beanutils.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-commons</artifactId>
+				<version>${springframework-data-commons.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
